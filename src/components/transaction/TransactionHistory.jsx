@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
 import { TransactionElem } from './TransactionElem';
 
 export const TransactionHistory = ({ items }) => {
