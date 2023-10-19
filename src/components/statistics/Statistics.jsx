@@ -1,13 +1,14 @@
 import { StatisticElem } from './StaticticElem';
+import { StyledSection, StyledList, StyledTitle } from './Statistic.styled';
 
 export const Statistics = ({ title, stats }) => (
-  <section class="statistics">
-    {title ? <h2 class="title">Upload stats</h2> : null}
+  <StyledSection>
+    <StyledTitle>{title ? 'Upload stats' : ''}</StyledTitle>
 
-    <ul class="stat-list">
+    <StyledList>
       {stats.map(({ id, label, percentage }) => (
         <StatisticElem key={id} label={label} percentage={percentage} />
       ))}
-    </ul>
-  </section>
+    </StyledList>
+  </StyledSection>
 );
