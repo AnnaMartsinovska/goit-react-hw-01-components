@@ -1,16 +1,18 @@
 import { TransactionElem } from './TransactionElem';
+import { StyledTable, StyledThead, StyledBody } from './Transaction.styled';
+import PropTypes from 'prop-types';
 
 export const TransactionHistory = ({ items }) => {
   return (
-    <table class="transaction-history">
-      <thead>
+    <StyledTable>
+      <StyledThead>
         <tr>
           <th>Type</th>
           <th>Amount</th>
           <th>Currency</th>
         </tr>
-      </thead>
-      <tbody>
+      </StyledThead>
+      <StyledBody>
         {items.map(({ id, type, amount, currency }) => (
           <TransactionElem
             key={id}
@@ -19,7 +21,18 @@ export const TransactionHistory = ({ items }) => {
             currency={currency}
           />
         ))}
-      </tbody>
-    </table>
+      </StyledBody>
+    </StyledTable>
   );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    })
+  ),
 };
