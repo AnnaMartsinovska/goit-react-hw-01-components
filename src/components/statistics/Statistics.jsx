@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const Statistics = ({ title, stats }) => (
   <StyledSection>
-    <StyledTitle>{title ? 'Upload stats' : null}</StyledTitle>
+    {title ? <StyledTitle>Upload stats</StyledTitle> : null}
 
     <StyledList>
       {stats.map(({ id, label, percentage }) => (

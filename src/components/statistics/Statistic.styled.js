@@ -32,5 +32,6 @@ export const StyledTitle = styled.h2`
 export const StyledList = styled.ul`
   display: flex;
   justify-content: space-around;
-  height: 100%;
+  height: 50%;
+  margin-top: auto;
 `;
